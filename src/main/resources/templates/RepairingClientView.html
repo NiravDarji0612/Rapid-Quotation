@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+
+.sub-menu-1{
+
+display: none;
+border:1px solid #B0B0B0;
+
+}
+
+.hover-me:hover .sub-menu-1{
+
+position: absolute;
+display: block;
+margin-top: -30px;
+margin-left: 381px;
+background-color: white;
+}
+
+
+
+</style>
+<title>Repairing Quotation Generation</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+<link rel="stylesheet" href="assets/css/QuotationFormate.css">
+ <link rel="stylesheet" href="assets/css/FullWidthDropdown.css"> 
+     <script type="text/javascript" src="assests/js/FullWidthDropdown.js"></script>
+	
+
+
+
+<script>
+
+$('#printInvoice').click(function(){
+    Popup($('.invoice')[0].outerHTML);
+    function Popup(data) 
+    {
+        window.print();
+        return true;
+    }
+});
+
+
+</script>
+</head>
+<body>
+
+<!-- ***** Preloader Start ***** -->
+	<div id="preloader">
+		<div class="jumper">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
+
+	<header class="">
+		<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><h2>Rapid
+						Quotation</h2></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/}">Home</a>
+						</li>
+						
+						   <li class="nav-item">
+				<ul class="dropdown">
+ 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+ 					Our Services<span class="caret"></span></a>
+						
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						
+						
+								<div class="container">
+				            <div class="row">
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+				                  Product or Service Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/mechanical}">Mechanical Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/Electrical}">Electrical or Electronics Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/softwareDevelopment}">Software Development Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/furniture}">Furniture Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/stationery}">Stationery Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/decoration}">Decoration Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+				                  Maintenance Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/maintenance}">Mechanical &<br>Electrical or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-sm-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-wrench" aria-hidden="true"></i>
+				                  Repairing<br>Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/repair}">Mechanical &<br>Electrical or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				            </div>
+				            </div>
+				            </div>
+				            </ul>	
+				</li>
+				              
+              
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/about}">About Us</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/contact}">Contact Us</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/logout}">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- Page Content -->
+	<div class="page-heading header-text">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Repairing Quotations</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	 <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+     <div class="card">
+         <div class="card-header p-4">
+         <img alt="" th:src="'data:image/png;base64,' +${repair.company.companyLogo}" height="20%" width="20%"></img>
+             <div class="float-right">
+               <br><br> <h1 th:text="${repair.company.companyName}"></h1>
+             </div>
+         </div>
+         <div class="card-body">
+             <div class="row mb-4">
+                 <div class="col-sm-6">
+                     <h3 class="mb-3">Company Details:</h3>
+                     <lable><b>Email:</b></lable>
+                     <div th:text="${repair.company.email}"></div>
+                      <lable><b>Address:</b></lable>
+                     <div th:text="${repair.company.address}"></div>
+                     <div th:text="${repair.company.address2}"></div>
+                      <lable><b>City:</b></lable>
+                     <div th:text="${repair.company.city}"></div>
+                      <lable><b>State:</b></lable>
+                     <div th:text="${repair.company.state}"></div>
+                      <lable><b>Pincode:</b></lable>
+                     <div th:text="${repair.company.zip}"></div>
+                      <lable><b>Website:</b></lable>
+                     <a href="" th:text="${repair.websiteLink}"></a><br>
+                     <lable>Fax Number:</lable>
+                     <h6 th:text="${repair.faxNumber}"></h6>
+                 </div>
+                 <div class="col-sm-6 ">
+                     <h3 class="mb-3">Quotation Details:</h3>
+                     <lable><b>Quotation Number:</b></lable>
+                     <h6 th:text="${repair.quotationNumber}"></h6>
+                     <lable><b>Created date:</b></lable>
+                     <h6 th:text="${repair.creationDate}"></h6>
+                     <lable><b>Valid till:</b></lable>
+                     <h6 th:text="${repair.expieryDate}"></h6>
+                 </div>
+             </div>
+             <div align="center">
+             
+             <h4 th:text="${repair.title}"></h4>
+             <div th:text="${repair.description}"></div>
+             </div>
+             
+             <div class="table-responsive-sm">
+                 <table class="table table-striped">
+                     <thead>
+                         <tr>
+                             <th>Item</th>
+                             <th class="center">Quantity</th>
+                             <th class="center">Unit</th>
+                             <th class="center">Price</th>
+                             
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr class="item" th:each="repairingQuotationItems: ${repair.repairingQuotationItems}">
+               				 <td th:text="${repairingQuotationItems.materialDescription}"></td>
+               				 <td  th:text="${repairingQuotationItems.quantity}"></td>
+               				  <td  th:text="${repairingQuotationItems.unit}"></td>
+                 			 <td  th:text="${repairingQuotationItems.price}"></td>
+           				 </tr>
+                     </tbody>
+                 </table>
+             </div>
+             <div class="row">
+                 <div class="col-lg-4 col-sm-5">
+                 </div>
+                 <div class="col-lg-4 col-sm-5 ml-auto">
+                     <table class="table table-clear">
+                         <tbody>
+                             <tr>
+                                 <td class="left">
+                                     <strong class="text-dark">total</strong>
+                                 </td>
+                                 <td class="right" th:text="${repair.total}"></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+                      <hr/>
+                      
+                      
+     
+                      
+                        <div class="table-responsive-sm">
+                 <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Labour Cost</th>
+                             <th>Total Including all Costs</th>
+                              <th>GST(%)</th>
+                         <th >Total Including all Costs With GST</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                     <td th:text="${repair.labourCost}"></td>
+                     <td th:text="${repair.totalIncludingAllCosts}"></td>
+                     <td th:text="${repair.gst}"></td>
+                      <td th:text="${repair.totalIncludingAllCostsWithGst}"></td>
+                      <td></td>
+                		
+                     </tr>
+                     </tbody>
+                     </table>
+                     </div>
+                      <hr/>
+             
+                      <lable for="approxTime">Approx Time</lable>
+                      <div th:text="${repair.approxTime}"></div>
+                      <hr/>
+                      
+                       <lable for="terms&conditions">Terms And Conditions</lable>
+        <textarea th:text="${repair.termsAndConditions}" class="form-control"  id="terms&conditions" cols="60" rows="5"></textarea>
+        
+                     
+         </div>
+        
+     </div>
+ </div>
+ 
+ 				<div align="center">
+					 <a class="btn btn-primary" th:href="@{/generate-repair-pdf}" target="_blank">Generate PDF</a>
+				</div>
+		
+	<div class="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						Copyright &copy; 2021 Rapid Quotation Project Group - Design: <a
+							rel="nofollow noopener" href=""
+							target="_blank">Rapid Quotation</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js">
+		
+	</script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Additional Scripts -->
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/owl.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/accordions.js"></script>
+
+	
+
+</body>
+</html>

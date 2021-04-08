@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="TemplateMo">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+
+.sub-menu-1{
+
+display: none;
+border:1px solid #B0B0B0;
+
+}
+
+.hover-me:hover .sub-menu-1{
+
+position: absolute;
+display: block;
+margin-top: -30px;
+margin-left: 381px;
+background-color: white;
+}
+
+
+
+</style>
+
+<title>Rapid Quotation Login page</title>
+
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/loginform.css">
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/custom-footer.css">
+<link rel="stylesheet" href="assets/css/register.css">
+<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+ <link rel="stylesheet" href="assets/css/FullWidthDropdown.css"> 
+ <script type="text/javascript" src="assests/js/FullWidthDropdown.js"></script>
+ 
+ 
+ <script type="text/javascript">
+ 
+ function show(){
+	 
+	 var pswrd = document.getElementById('pswrd');
+	 var icon =  document.querySelector('.fa');
+	 
+	 if(pswrd.type === "password"){
+		 pswrd.type = "text";
+		 
+	 }else{
+		 pswrd.type="password";
+		 
+	 }	 
+	 
+ }
+ 
+ </script>
+	
+<!--
+
+Finance Business TemplateMo
+
+https://templatemo.com/tm-545-finance-business
+
+-->
+</head>
+
+<body>
+
+	<!-- ***** Preloader Start ***** -->
+	<div id="preloader">
+		<div class="jumper">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<!-- ***** Preloader End ***** -->
+
+	<!-- Header -->
+	<!-- <div class="sub-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-xs-12">
+            <ul class="left-info">
+              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="right-icons">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+	<header class="">
+		<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand" th:href="@{/}"><h2>RAPID
+						QUOTATION</h2></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item" style="margin-right: -25px;">
+						<a class="nav-link" th:href="@{/}">Home</a>
+						
+						<li class="nav-item">
+						<li class="nav-item active">
+						<a class="nav-link" th:href="@{/signin}">Login</a> 
+						</li>
+						
+						  <li class="nav-item">
+				<ul class="dropdown">
+ 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+ 					Our Services<span class="caret"></span></a>
+						
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						
+						
+								<div class="container">
+				            <div class="row">
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+				                  Product or Service Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/mechanical}">Mechanical Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/Electrical}">Electrical or Electronics Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/softwareDevelopment}">Software Development Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/furniture}">Furniture Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/stationery}">Stationery Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/decoration}">Decoration Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+				                  Maintenance Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/maintenance}">Mechanical &<br>Electrical or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-sm-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-wrench" aria-hidden="true"></i>
+				                  Repairing<br>Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/repair}">Mechanical &<br>Electrical or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				            </div>
+				            </div>
+				            </div>
+				            </ul>	
+				</li>
+				              
+              
+						
+						<li class="nav-item"><a class="nav-link" th:href="@{/about}">About us</a></li>
+						<li class="nav-item" ><a class="nav-link" th:href="@{/contact}">Contact us</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+
+
+	<div id="bg">
+		<div class="loginmodule" style="height: 500px;">
+
+			<div th:if="${param.error}" class="alert alert-danger">Invalid username or password</div>
+			<div th:if="${param.logout}" class="alert alert-success">You are successfully logged out.</div>
+			
+			<div th:if="${param.change}" class="alert alert-success">
+				<p th:text="${param.change}"></p>
+			
+			</div>
+
+			<form th:action="@{/signin}" action="#" class="loginform" method="post">
+
+				<div class="form-group">
+					<label style="color: black;" for="username">Username:</label><br>
+					
+					<div class="input-group">
+					<input type="text" name="username" id="username" class="form-control" placeholder="Enter Your email.." required="required">
+						<div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+					 	</div>
+				    </div>
+				
+				
+				</div>
+				
+				
+				<div class="form-group">
+					<label style="color: black;">Password:</label><br>
+					<div class="input-group">
+					<input type="password"  id="pswrd"  class="form-control" placeholder="Type a Password.." required="required">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-eye" aria-hidden="true" onclick="show()"></i></span>
+					 </div>
+						
+				</div>
+				</div>
+				
+				
+				
+				
+				<div class="form-group">
+					<label for="remember-me" style="color: black;"><span>Remember me</span> <span><input id="remember-me" name="remember-me"
+							type="checkbox"></span></label><br> 
+					<input type="submit" name="submit"  class="button" value="submit">
+				</div>
+				<div id="register-link" class="text-right">
+					<a th:href="@{/register}" class="text-info">Register here</a>
+				</div>
+				<div id="register-link" class="text-right">
+					<a th:href="@{/forgot-password}" class="text-info">Forgot Password?</a>
+				</div>
+			</form>
+			
+
+
+
+
+		</div>
+
+	</div>
+<br><br>
+	 <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+           	
+           	<p>
+						Copyright &copy; 2021 Rapid Quotation Project Group - Design: <a
+							rel="nofollow noopener" href=""
+							target="_blank">Rapid Quotation</a>
+					</p>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Additional Scripts -->
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/owl.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/accordions.js"></script>
+
+
+</body>
+</html>

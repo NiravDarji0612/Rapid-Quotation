@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Rapid Quotation-PDF generation</title>
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/QuotationPDF.css">
+
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    
+</head>
+<body>
+
+
+	 <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+     <div class="card p-4">
+         <div align="center">
+         <img alt="" th:src="'data:image/png;base64,' +${stationery.company.companyLogo}" height="20%" width="20%"></img>
+             <div align="center">
+               <h1 th:text="${stationery.company.companyName}"></h1>
+             </div>
+         </div>
+         <hr/>
+         <div class="card-body">
+             <div class="row mb-4">
+                 <div class="col-sm-6">
+                     <h3 class="mb-3">Company Details:</h3>
+                     <lable>Email:</lable>
+                     <div th:text="${stationery.company.email}"></div>
+                      <lable>Address:</lable>
+                     <div th:text="${stationery.company.address}"></div>
+                     <div th:text="${stationery.company.address2}"></div>
+                      <lable>City:</lable>
+                     <div th:text="${stationery.company.city}"></div>
+                      <lable>State:</lable>
+                     <div th:text="${stationery.company.state}"></div>
+                      <lable>Pincode:</lable>
+                     <div th:text="${stationery.company.zip}"></div>
+                      <lable>Website:</lable>
+                     <a href="" th:text="${stationery.websiteLink}"></a><br>
+                     <lable>Fax Number:</lable>
+                     <p th:text="${stationery.faxNumber}"></p>
+                 </div>
+                 <div class="col-sm-6 ">
+                     <h3 class="mb-3">Quotation Details</h3>
+                     <lable>Quotation Number:</lable>
+                     <h6 th:text="${stationery.quotationNumber}"></h6>
+                     <lable>Created date:</lable>
+                     <h6 th:text="${stationery.creationDate}"></h6>
+                     <lable>Valid till:</lable>
+                     <h6 th:text="${stationery.expieryDate}"></h6>
+                 </div>
+             </div>
+             <br><br>
+             <div align="center">
+             <h3>Title</h3>
+             <h5 th:text="${stationery.title}"></h5>
+             <h3>Description</h3>
+             <div th:text="${stationery.description}"></div>
+             </div>
+              <hr/>
+              <div align="center">
+             <h3>Quotation Items</h3>
+             </div><br>
+             
+             <div class="table">
+                 <table class="table">
+                     <thead>
+                         <tr>
+                             <th>Item</th>
+                             <th class="center">Quantity</th>
+                             <th class="center">Unit</th>
+                             <th class="center">Price</th>
+                             
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr class="item" th:each="stationeriesItem : ${stationery.stationeriesItems}">
+               				 <td th:text="${stationeriesItem.materialDescription}"></td>
+               				 <td  th:text="${stationeriesItem.quantity}"></td>
+               				 <td  th:text="${stationeriesItem.unit}"></td>
+                 			 <td  th:text="${stationeriesItem.price}"></td>
+           				 </tr>
+                     </tbody>
+                 </table>
+             </div>
+             <div class="row">
+                 <div class="col-lg-4 col-sm-5">
+                 </div>
+                 <div class="col-lg-4 col-sm-5 ml-auto">
+                     <table class="table table-clear">
+                         <tbody>
+                             <tr>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                                 <td class="left">
+                                     <strong class="text-dark">total</strong>
+                                 </td>
+                                 <td class="right" th:text="${stationery.total}"></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+                      <hr/>
+                      
+                      
+                       <div class="table">
+                 <table class="table">
+                     <thead>
+                         <tr>
+                             <th>Labour</th>
+                             <th class="center">Transportation</th>
+                             <th class="center">Packaging</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                      	<td th:text="${stationery.labourCost}">  </td>
+                		<td  th:text="${stationery.transportationCost}">  </td>
+                		<td th:text="${stationery.packagingCost}"></td>
+                     </tr>
+                     </tbody>
+                     </table>
+                     </div>
+                      <hr/>
+                      
+                       <div class="table">
+                 <table class="table">
+                     <thead>
+                         <tr>
+                         <th>Total Including all Costs</th>
+                        <th>GST</th>
+                         <th>Total Including all Costs With GST</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+                     <td th:text="${stationery.totalIncludingAllCosts}"></td>
+                     <td th:text="${stationery.gst}"></td>
+                      <td th:text="${stationery.totalIncludingAllCostsWithGst}"></td>
+                 
+                     </tr>
+                     </tbody>
+                     </table>
+                     </div>
+                      <hr/>
+                    
+                      <lable for="approxTime">Approx Time</lable>
+                      <div th:text="${stationery.approxTime}"></div>
+                      <hr/>
+                      
+                       <lable for="terms&conditions">Terms And Conditions</lable>
+        <textarea th:text="${stationery.termsAndConditions}" class="form-control"  id="terms&conditions" cols="60" rows="5"></textarea>
+        
+                     
+         </div>
+        
+     </div>
+ </div>
+ 
+
+</body>
+</html>

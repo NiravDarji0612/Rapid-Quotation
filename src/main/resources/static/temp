@@ -1,0 +1,134 @@
+<div class="invoice-box">
+        <table>
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                               <span th:text="${mech.company.companyName}"></span>
+                               <hr style="border: 2px solid">
+                            </td>
+                            </tr>
+                            
+                           
+                                <hr style="border: 2px solid">
+                                
+                            
+                            <tr>
+                            <td>
+                            <span th:text="${mech.company.email}"></span><br>
+                            <span th:text="${mech.company.address}"></span>
+                            <span th:text="${mech.company.address2}"></span><br>
+                            <span th:text="${mech.company.city}"></span><br>
+                            <span th:text="${mech.company.state}"></span><br>
+                            <span th:text="${mech.company.zip}"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            </table>
+            
+            
+           <div align="center">
+           
+           	<span th:text="${mech.quoteTitle}"></span>
+           	<p th:text="${mech.quoteDescription}"></p>
+           	<hr/>
+           	
+           
+           </div>
+           
+           <table>
+            <tr class="heading">
+                <td> Design Type </td> 
+                <td  style="text-align:right;"> Design Tool </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                 <td style="text-align:center;"> Approx. Time </td>
+            </tr>
+            
+            <tr class="item">
+                <td th:text="${mech.designType}">  </td>
+                <td  th:text="${mech.designTool}">  </td>
+                <td></td>
+                 <td></td>
+                 <td></td>
+                <td  style="text-align:center;" th:text="${mech.approxTime}"></td>
+            </tr>
+            </table>
+           
+           <br>
+            
+            <div align="right">
+            
+            <p>* All prices are in &#8377;(INR)</p>
+            
+            
+            </div>
+           
+           
+            <table>
+            
+            <tr class="heading">
+               
+                <td>Item </td>
+                <td style="text-align:center;"> Quantity </td>
+                <td></td>
+                <td></td>
+                <td style="text-align:left;" > Price </td>
+            </tr>
+            
+            <tr class="item" th:each="mechItem : ${mech.mechItems}">
+                <td th:text="${mechItem.materialDescription}"></td>
+                <td  style="text-align:center;" th:text="${mechItem.quantity}"></td>
+                <td></td>
+                <td></td>
+                 <td  th:text="${mechItem.price}"></td>
+            </tr>
+            
+            <tr class="total">
+                <td></td>
+                <td></td>
+        		<td></td>
+                <td><b>Total:</b></td>
+                <td style="font-weight: bold;" th:text="${mech.total}">
+                </td>
+            </tr>
+        </table>
+        <hr/>
+        <lable for="terms&conditions">Terms & Conditions</lable>
+        <textarea th:text="${mech.termsAndConditions}" class="form-control"  id="terms&conditions" cols="60" rows="5"></textarea>
+        
+         
+    <br><br>
+    <div align="center">
+        <a class="btn btn-primary" th:href="@{/generate-pdf}" onclick="alterMessage()">Generate PDF</a>
+         <img alt="" th:src="'data:image/png;base64,' +${mech.company.companyLogo}"></img>
+     </div>
+    </div>
+   
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

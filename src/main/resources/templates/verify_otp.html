@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="TemplateMo">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+
+.sub-menu-1{
+
+display: none;
+border:1px solid #B0B0B0;
+
+}
+
+.hover-me:hover .sub-menu-1{
+
+position: absolute;
+display: block;
+margin-top: -30px;
+margin-left: 381px;
+background-color: white;
+}
+
+
+
+</style>
+<title>verify-otp</title>
+
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/loginform.css">
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/custom-footer.css">
+<link rel="stylesheet" href="assets/css/register.css">
+<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+ <link rel="stylesheet" href="assets/css/FullWidthDropdown.css"> 
+     <script type="text/javascript" src="assests/js/FullWidthDropdown.js"></script>
+	
+<!--
+
+Finance Business TemplateMo
+
+https://templatemo.com/tm-545-finance-business
+
+-->
+</head>
+
+<body>
+
+	<!-- ***** Preloader Start ***** -->
+	<div id="preloader">
+		<div class="jumper">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<!-- ***** Preloader End ***** -->
+
+	<!-- Header -->
+	<!-- <div class="sub-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-xs-12">
+            <ul class="left-info">
+              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
+              <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="right-icons">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+	<header class="">
+		<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand" href="index.html"><h2>RAPID
+						QUOTATION</h2></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/}">Home</a>
+						</li>
+						
+						
+						  <li class="nav-item">
+				<ul class="dropdown">
+ 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+ 					Our Services<span class="caret"></span></a>
+						
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						
+						
+								<div class="container">
+				            <div class="row">
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+				                  Product or Service Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/mechanical}">Mechanical Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/Electrical}">Electrical or Electronics Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/softwareDevelopment}">Software Development Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/furniture}">Furniture Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/stationery}">Stationery Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/decoration}">Decoration Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+				                  Maintenance Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/maintenance}">Mechanical &<br>Electrical or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-sm-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-wrench" aria-hidden="true"></i>
+				                  Repairing<br>Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/repair}">Mechanical &<br>Electrical or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				            </div>
+				            </div>
+				            </div>
+				            </ul>	
+				</li>
+				              
+              
+						
+						
+						<li class="nav-item">
+							<a class="nav-link"	th:href="@{/about}">About Us</a> 
+						</li>
+						
+						<li class="nav-item">
+						<a class="nav-link" th:href="@{/contact}">Contact Us</a>
+						</li>
+
+						<li class="nav-item" sec:authorize="isAuthenticated()">
+							<a class="nav-link" th:href="@{/logout}">Log out</a>
+						</li>
+						
+						<li class="nav-item" sec:authorize="isAnonymous()">
+							<a  class="nav-link" th:href="@{/signin}">Log in</a>
+						</li>
+						
+						<li class="nav-item">
+							<a  class="nav-link" th:href="@{/Register-form}">Register</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+
+
+	<div id="bg">
+		<div class="loginmodule" style="height: 300px;">
+		
+		<div class="alert alert-success" role="alert">
+		
+			We have Sent OTP to your email
+		
+		</div>
+		
+		<div th:if="${session.message}"  class="alert alert-danger" role="alert">
+  					<p th:text="${session.message}"></p>
+  					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+			</div>
+		
+
+			<form th:action="@{/verify-otp}" action="#" class="loginform" method="post">
+			
+					<div class="form-group" align="center">
+					<input type="text" name="otp" class="form-control" required="required" placeholder="Enter OTP here">
+				</div>
+				
+				<div align="center">
+				<input type="submit" name="submit" class="btn btn-info btn-md" value="Verify">
+				</div>
+			</form>
+
+
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						Copyright &copy; 2021 Rapid Quotation Project Group - Design: <a
+							rel="nofollow noopener" href=""
+							target="_blank">Rapid Quotation</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Additional Scripts -->
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/owl.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/accordions.js"></script>
+
+
+</body>
+</html>

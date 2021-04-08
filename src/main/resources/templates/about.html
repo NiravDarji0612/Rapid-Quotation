@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="TemplateMo">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>Rapid Quotation-About Page</title>
+
+<style type="text/css">
+
+.sub-menu-1{
+
+display: none;
+border:1px solid #B0B0B0;
+
+}
+
+.hover-me:hover .sub-menu-1{
+
+position: absolute;
+display: block;
+margin-top: -30px;
+margin-left: 381px;
+background-color: white;
+}
+
+
+
+</style>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+
+ <link rel="stylesheet" href="assets/css/FullWidthDropdown.css"> 
+ <script type="text/javascript" src="assests/js/FullWidthDropdown.js"></script>
+	
+
+<style type="text/css">
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  size:auto;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+	<!-- ***** Preloader Start ***** -->
+	<div id="preloader">
+		<div class="jumper">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<!-- ***** Preloader End ***** -->
+
+	<!-- Header -->
+
+	<header class="">
+		<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand" th:href="@{/}"><h2>Rapid Quotation</h2></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+					
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/}">Home</a>
+						</li>
+						
+						
+						  <li class="nav-item">
+				<ul class="dropdown">
+ 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+ 					Our Services<span class="caret"></span></a>
+						
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						
+						
+								<div class="container">
+				            <div class="row">
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+				                  Product or Service Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/mechanical}">Mechanical Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/Electrical}">Electrical or Electronics Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/softwareDevelopment}">Software Development Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/furniture}">Furniture Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/stationery}">Stationery Quotation</a>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/decoration}">Decoration Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-xs-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+				                  Maintenance Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/maintenance}">Mechanical &<br>Electrical Or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				              <div class="col col-sm-6 col-md-3">
+				                <ul class="nav flex-column">
+				                <li class="nav-item">
+				                  <span class="nav-link text-bold"><i class="fa fa-wrench" aria-hidden="true"></i>
+				                  Repairing<br>Quotations</span>
+				                </li>
+				                <li class="nav-item">
+				                  <a class="nav-link" th:href="@{/repair}">Mechanical &<br>Electrical Or Electronics Quotation</a>
+				                </li>
+				              </ul>
+				              </div>
+				              <!-- /.col  -->
+				              
+				            </div>
+				            </div>
+				            </div>
+				            </ul>	
+				</li>
+				              
+              	
+						
+						<li class="nav-item active">
+							<a class="nav-link"	th:href="@{/about}">About Us</a> 
+						</li>
+						
+						<li class="nav-item">
+						<a class="nav-link" th:href="@{/contact}">Contact Us</a>
+						</li>
+
+						<li class="nav-item" sec:authorize="isAuthenticated()">
+							<a class="nav-link" th:href="@{/logout}">Log out</a>
+						</li>
+						
+						<li class="nav-item" sec:authorize="isAnonymous()">
+							<a  class="nav-link" th:href="@{/signin}">Log in</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Page Content -->
+	<div class="page-heading header-text">
+		<div class="about">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>About Us</h1>
+					<span>know more about our project and our developers</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="more-info about-info" style="margin-top:50px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="more-info-content">
+						<div class="row">
+							<div class="col-md-6 align-self-center">
+								<div class="right-content">
+									<h2 style="color: black;">
+										Get to know about our Project
+									</h2>
+									<p>
+										Rapid Quotation is specially designed and developed for an instant-quotation making.
+										To make a process little easy and specific,we are providing a <b>field-base quotation</b> Where
+										all the fields like mechanical,decoration,etc.. is developed as all the specific quotation-fields according to
+										that field are there to reduce the time and making process easy.
+										 <br>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="left-image">
+									<img src="assets/images/about-image.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><br><br><br>
+	<h2 style="text-align:center">Our Team</h2>
+	<br><br>
+<div class="row">
+  <div class="column">
+    <div class="card" style="margin-left: 100px;">
+      <img src="/assets/images/aboutUs.jpg" style="width:100%">
+      <div class="container">
+      <br>
+        <h2>Jane Doe</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p><br><br>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card" style="width:78%;">
+      <img src="/assets/images/aboutUs.jpg" style="width:100%">
+      <div class="container">
+      <br>
+        <h2>Mike Ross</h2>
+        <p class="title">Art Director</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>kshdfkhldsflfjdslkf</p><br><br>
+      </div>
+    </div>
+  </div>
+  <div class="column" style="margin-left:-80px;">
+    <div class="card" style="width:78%;">
+      <img src="/assets/images/aboutUs.jpg" style="width:100%">
+      <div class="container">
+      <br>
+        <h2>Mike Ross</h2>
+        <p class="title">Art Director</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>kshdfkhldsflfjdslkf</p><br><br>
+      </div>
+    </div>
+  </div>
+  
+   <div class="column">
+    <div class="card" style="margin-left: 100px;">
+      <img src="/assets/images/aboutUs.jpg" style="width:100%">
+      <div class="container">
+      <br>
+        <h2>Jane Doe</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p><br><br>
+      </div>
+    </div>
+  </div>
+  </div>
+	
+	<div class="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						Copyright &copy; 2021 Rapid Quotation Project Group - Design: <a
+							rel="nofollow noopener" href=""
+							target="_blank">Rapid Quotation</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Additional Scripts -->
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/owl.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/accordions.js"></script>
+
+
+
+</body>
+</html>

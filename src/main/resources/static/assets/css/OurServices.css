@@ -1,0 +1,62 @@
+@charset "ISO-8859-1";
+
+body {
+    background-color:#ffffff;
+}
+
+.maincard {
+    position: relative;
+    width: 300px;
+    height: 300px
+}
+
+.thecard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease
+}
+
+.thecard:hover {
+    transform: rotateY(180deg)
+}
+
+.thefront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hidden;
+    background: #ffffff;
+    color:#000000;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    padding: 10px
+}
+
+.theback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: hidden;
+    background:#ffffff;
+    color:#000000;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    border: 1px solid #eee;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    padding: 10px
+}
+
+.user_name {
+    color: #eee;
+    font-size: 10px;
+    margin-top: 0px
+}
+
+.about {
+    font-size: 12px
+}

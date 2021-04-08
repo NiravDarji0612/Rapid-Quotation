@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="TemplateMo">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+	rel="stylesheet" /> 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+
+.sub-menu-1{
+
+display: none;
+border:1px solid #B0B0B0;
+
+}
+
+.hover-me:hover .sub-menu-1{
+
+position: absolute;
+display: block;
+margin-top: -30px;
+margin-left: 381px;
+background-color: white;
+}
+
+
+</style>
+
+<title>Rapid Quotation-Furniture Service</title>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+ <link rel="stylesheet" href="assets/css/FullWidthDropdown.css"> 
+     <script type="text/javascript" src="assests/js/FullWidthDropdown.js"></script>
+	
+
+<style type="text/css">
+.file-field.big .file-path-wrapper {
+	height: 3.2rem;
+}
+
+.file-field.big .file-path-wrapper .file-path {
+	height: 3rem;
+}
+</style>
+<script type="text/javascript">
+var MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+
+$(document).ready(function() {
+	
+    $('#fileImage').change(function() {
+    	
+        fileSize = this.files[0].size;
+        if (fileSize > MAX_FILE_SIZE) {
+            this.setCustomValidity("File must not exceed 2 MB!");
+            this.reportValidity();
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+
+$(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    $('#txtDate').attr('min', maxDate);
+});
+
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+
+	$('#fileImage').change(function(){
+		showImageThumbnail(this);
+			
+	});
+
+});
+
+
+function showImageThumbnail(fileInput){
+	file = fileInput.files[0];
+	reader = new FileReader();
+	
+	reader.onload = function(e){
+		$('#thumbnail').attr('src' , e.target.result);
+	};
+	
+	reader.readAsDataURL(file);
+	
+}
+</script>
+
+<script>
+	function populate(s) {
+
+		var m = s[s.selectedIndex].id;
+		alert(m);
+		if (m == "design-form") {
+			$('#design').show();
+			$('#product&manufacture').hide();
+			$('#testing').hide();
+			$('#maintenance').hide();
+
+		} else if (m == "product&manufacture-form") {
+
+			$('#product&manufacture').show();
+			$('#design').hide();
+			$('#testing').hide();
+			$('#maintenance').hide();
+
+		}else if (m == "testing-form") {
+
+			$('#product&manufacture').hide();
+			$('#design').hide();
+			$('#testing').show();
+			$('#maintenance').hide();
+			
+		}else if (m == "maintenance-form") {
+
+			$('#product&manufacture').hide();
+			$('#design').hide();
+			$('#testing').hide();
+			$('#maintenance').show();
+
+	}
+};
+</script>
+<style type="text/css">
+.center_div {
+	margin: 0 auto;
+	width: 80% /* value of your choice which suits your alignment */
+}
+</style>
+<script type="text/javascript">
+
+let addRow = function () {
+    let listName = 'furnitureItems'; //list name in Catalog.class
+    let fieldsNames = ['materialDescription', 'quantity','unit','price']; 
+    let rowIndex = document.querySelectorAll('.item').length; 
+
+    let row = document.createElement('div');
+    row.classList.add('row', 'item');
+
+    fieldsNames.forEach((fieldName) => {
+        let col = document.createElement('div');
+        col.classList.add('col', 'form-group');
+        
+        if (fieldName === 'id') {
+            col.classList.add('d-none'); //field with id - hidden
+        }
+
+        let input = document.createElement('input');
+        input.type = 'textarea';
+        input.classList.add('form-control');
+        input.id = listName + rowIndex + '.' + fieldName;
+        input.setAttribute('name', listName + '[' + rowIndex + '].' + fieldName);
+
+        col.appendChild(input);
+        row.appendChild(col);
+    });
+
+    document.getElementById('furnitureItemList').appendChild(row);
+};
+
+</script>
+</head>
+
+<body>
+
+	<!-- ***** Preloader Start ***** -->
+	<div id="preloader">
+		<div class="jumper">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<!-- ***** Preloader End ***** -->
+
+	<!-- Header -->
+
+	<header class="">
+		<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				<a class="" href="index.html"><h2>Rapid Quotation</h2></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/}">Home</a>
+						</li>
+						  <li class="nav-item">
+								<ul class="dropdown">
+					 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					 					Our Services<span class="caret"></span></a>
+											
+											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											
+											
+													<div class="container">
+									            <div class="row">
+									              <div class="col col-xs-6 col-md-3">
+									                <ul class="nav flex-column">
+									                <li class="nav-item">
+									                  <span class="nav-link text-bold"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+									                  Product or Service Quotations</span>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/mechanical}">Mechanical Quotation</a>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/Electrical}">Electrical or Electronics Quotation</a>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/softwareDevelopment}">Software Development Quotation</a>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/furniture}">Furniture Quotation</a>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/stationery}">Stationery Quotation</a>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/decoration}">Decoration Quotation</a>
+									                </li>
+									              </ul>
+									              </div>
+									              <!-- /.col  -->
+									              
+									              <div class="col col-xs-6 col-md-3">
+									                <ul class="nav flex-column">
+									                <li class="nav-item">
+									                  <span class="nav-link text-bold"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+									                  Maintenance Quotations</span>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/maintenance}">Mechanical &<br>Electrical or Electronics Quotation</a>
+									                </li>
+									              </ul>
+									              </div>
+									              <!-- /.col  -->
+									              
+									              <div class="col col-sm-6 col-md-3">
+									                <ul class="nav flex-column">
+									                <li class="nav-item">
+									                  <span class="nav-link text-bold"><i class="fa fa-wrench" aria-hidden="true"></i>
+									                  Repairing<br>Quotations</span>
+									                </li>
+									                <li class="nav-item">
+									                  <a class="nav-link" th:href="@{/repair}">Mechanical &<br>Electrical or Electronics Quotation</a>
+									                </li>
+									              </ul>
+									              </div>
+									              <!-- /.col  -->
+									              
+									            </div>
+									            </div>
+									            </div>
+									            </ul>	
+				</li>
+				              
+						
+					
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/about}">About Us</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/contact}">Contact Us</a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/logout}">Logout</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Page Content -->
+	<div class="page-heading header-text">
+	<div class="furniture">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 style="color:white;">Furniture Quotation</h1>
+					<span style="color:white;font-size:20px;"th:text="${user.companyName}"></span>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<br>
+	
+
+	 <div class="center_div">
+		<div class="form-row">
+
+		</div>
+
+		<div id="design">
+
+			<form th:action="@{/furniture-quotation-details}" th:object="${furniture}" enctype="multipart/form-data" method="post">
+				<br>
+
+				<h3>
+					Company Details
+				</h3>
+				<hr style="border: 1px solid black;">
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputCompanyName4">Company Name</label> <input
+							type="text" class="form-control" id="inputCompanyName4"
+							placeholder="Company Name" th:field=*{company.companyName} required="required">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputEmail4">Email</label> <input type="email"
+							class="form-control" id="inputEmail4" placeholder="Email"
+							th:field=*{company.email} required="required">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">State</label> <select id="inputState"
+							class="form-control" th:field=*{company.state} required="required">
+							<option selected value="">Choose...</option>
+							<option value="Andhra Pradesh">Andhra Pradesh</option>
+							<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+							<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chandigarh">Chandigarh</option>
+							<option value="Chhattisgarh">Chhattisgarh</option>
+							<option value="Dadra Nagar Haveli and Daman & Diu">Dadra Nagar Haveli and Daman And Diu</option>
+							<option value="Delhi">Delhi</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">Himachal Pradesh</option>
+							<option value="Jammu & Kashmir">Jammu And Kashmir</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Ladakh">Ladakh</option>
+							<option value="Lakshadweep">Lakshadweep</option>
+							<option value="Madhya Pradesh">Madhya Pradesh</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Puducherry">Puducherry</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="Uttar Pradesh">Uttar Pradesh</option>
+							<option value="West Bengal">West Bengal</option>
+							
+						</select>
+					</div>
+
+				</div>
+				<div class="form-row">
+
+					<div class="form-group col-md-4">
+						<label for="inputAddress">Address</label> <input type="text"
+							class="form-control" id="inputAddress" placeholder="1234 Main St"
+							th:field=*{company.address} required="required">
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="inputAddress2">Address 2</label> <input type="text"
+							class="form-control" id="inputAddress2"
+							placeholder="Apartment, studio, or floor"
+							th:field=*{company.address2} required="required">
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="inputCity">City</label> <input type="text"
+							placeholder="Your city name " class="form-control" id="inputCity"
+							th:field=*{company.city} required="required">
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="inputZip">Zip</label> <input type="number"
+							placeholder="pincode number of your area" class="form-control"
+							id="inputZip" th:field=*{company.zip} required="required">
+					</div>
+				
+					<div class="form-group col-md-4">
+						<label>Company Logo</label> 
+						<input type="file" placeholder="choose your logo" name="fileImage"   id="fileImage" accept="image/png , image/jpeg">
+					</div>
+					</div> 
+
+
+				<br>
+				<h3> Quotation Details </h3>
+				<hr style="border: 1px solid black;">
+				<div class="form-row">
+
+					<div class="form-group col-md-4">
+						<label for="inputNumber">Quotation Number</label> <input
+							type="number" required="required" class="form-control" id="inputNumber" placeholder="Number of Quotation" th:field=*{quotationNumber}>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputDate">Date</label> <input type="date"
+							class="form-control" required="required" id="inputDate" placeholder="date" th:field=*{creationDate}>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputValidity">Quotation valid till :</label> <input
+							type="date"  required="required" class="form-control" id="txtDate" th:field=*{expieryDate}>
+					</div>
+				</div>
+
+
+				<div class="form-row">
+
+					<div class="form-group col-md-4">
+						<label for="inputTitle">Title</label> <input type="text"
+							class="form-control" id="inputTitle"
+							placeholder="Title of Quotation" th:field=*{title} required="required">
+					</div>
+					
+					<div class="form-group col-md-4">
+					<label for="exampleFormControlTextarea1">Description</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1"
+						rows="3" placeholder="Description of Quotation"
+						th:field=*{description} required="required"></textarea>
+				</div>
+				
+					<div class="form-group col-md-4">
+						<label for="inputTitle">Furniture Type</label> <input type="text"
+							class="form-control" id="inputTitle"
+							placeholder="Title of Quotation" th:field=*{furnitureType} required="required">
+					</div>
+				
+				
+				
+				</div>
+				
+
+				<div class="form-row">
+				
+				<div class="form-group col-md-4">
+						<label for="inputTitle">Furniture Place</label> <input type="text"
+							class="form-control" id="inputTitle"
+							placeholder="Title of Quotation" th:field=*{furniturePlace} required="required">
+					</div>
+					
+					<div class="form-group col-md-4">
+						<label for="inputTitle">Labour Cost</label> <input type="number"
+							class="form-control" id="inputTitle"
+							placeholder="Title of Quotation" th:field=*{labourCost}>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputGST">GST</label>
+						<select  id="inputGST" class="form-control" th:field=*{gst}>
+							<option selected value="">Choose...</option>
+							<option value="5">5%</option>
+							<option value="12">12%</option>
+							<option value="18">18%</option>
+							<option value="28">28%</option>
+						</select>
+					</div>
+					
+					
+				
+				</div>
+				<br>
+
+				<h3>
+					Materials Details
+				</h3>
+				<hr style="border: 1px solid black;">
+				<div id="furnitureItemList">
+					<div class="form-row">
+						<div class="col form-group">Material Description</div>
+						<div class="col form-group">Quantity</div>
+						<div class="col form-group">Unit</div>
+						<div class="col form-group">Price</div>
+					</div>
+					<div class="row item" th:each="furnitureItems , itemStat: *{furnitureItems}">
+						<div class="col form-group">
+							<input type="text"  required="required" placeholder="e.g item 1" class="form-control"
+								th:field=*{furnitureItems[__${itemStat.index}__].materialDescription} />
+						</div>
+						<div class="col form-group">
+							<input type="number" required="required" class="form-control"
+								th:field=*{furnitureItems[__${itemStat.index}__].quantity} />
+						</div>
+						<div class="col form-group">
+							<input type="text" required="required" class="form-control"
+								th:field=*{furnitureItems[__${itemStat.index}__].unit} />
+						</div>
+						<div class="col form-group">
+							<input type="number" required="required" class="form-control"
+								th:field=*{furnitureItems[__${itemStat.index}__].price} />
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row">
+
+					<div class="form-group col-md-8">
+						<button type="button" class="btn btn-primary" onclick="addRow()">Add
+							item</button>
+					</div>
+
+
+				</div>
+				<br>
+				<h3>
+					Additional Information
+				</h3>
+				<hr style="border: 1px solid black;">
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputAprroxTime">Approx. Time</label> <input
+							type="text" class="form-control" id="inputAprroxTime"
+							placeholder="e.g. Days , Months , Year" th:field=*{approxTime}>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputWebsiteLink">Website Link</label> <input
+							type="url" class="form-control" id="inputWebsiteLink"
+							placeholder="e.g. https://www.website-name.com" th:field=*{websiteLink}>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputFaxNumber">Fax Number</label> <input
+							type="number" class="form-control" id="inputFaxNumber"
+							placeholder="e.g 123-456-7890 " th:field=*{faxNumber}>
+					</div>
+
+
+
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Terms and
+						Conditions</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1"
+						rows="3" th:field=*{termsAndConditions}>
+										</textarea>
+				</div>
+				<br />
+				<div align="center">
+					<button class="btn btn-primary" type="submit">Create
+						Quotation</button>
+				</div>
+				<br />
+			</form>
+		</div>
+	</div>
+ 
+	<div class="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+						Copyright &copy; 2021 Rapid Quotation Project Group - Design: <a
+							rel="nofollow noopener" href=""
+							target="_blank">Rapid Quotation</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Additional Scripts -->
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/owl.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/accordions.js"></script>
+
+	<script type="text/Javascript">
+		cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+		function clearField(t) { //declaring the array outside of the
+			if (!cleared[t.id]) { // function makes it static and global
+				cleared[t.id] = 1; // you could use true and false, but that's more typing
+				t.value = ''; // with more chance of typos
+				t.style.color = '#fff';
+			}
+		}
+	</script>
+
+</body>
+</html>
